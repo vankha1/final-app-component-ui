@@ -88,6 +88,26 @@
       .sidebar ul li a:active {
         color: var(--main_color);
       }
+
+      /* Main */
+      #main {
+        background-color: #f8f8f8;
+        width: 100%;
+        height: calc(100vh - var(--header-height));
+        padding: 0.8rem 0;
+      }
+      #main .container {
+        width: calc(100% - var(--sidebar-width) * 2);
+        height: 100%;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.8rem;
+
+        padding: 1rem 2rem;
+      }
     </style>
   </head>
   <body>
@@ -104,12 +124,20 @@
       </div>
     </header>
 
-    <div class="sidebar">
-      <ul>
-        <li><a href="">Feeds</a></li>
-        <li><a href="">My Photos</a></li>
-        <li><a href="">My Albums</a></li>
-      </ul>
-    </div>
+    <main id="main">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <ul>
+          <li><a href="">Feeds</a></li>
+          <li><a href="">My Photos</a></li>
+          <li><a href="">My Albums</a></li>
+        </ul>
+      </div>
+
+      <!-- Main content -->
+      <div class="container">
+        
+      </div>
+    </main>
   </body>
 </html>
