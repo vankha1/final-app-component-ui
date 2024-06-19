@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/1f91b0e9aa.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <title>Edit photo</title>
+
+    <style>
+      :root {
+        --main_color: #3c5999;
+        --header-height: 56px;
+        --sidebar-width: 200px;
+        --main_color: #3c5999;
+        --post_card_height: 250px;
+        --post_card_width: 500px;
+      }
+      #header {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 3.5rem;
+        align-items: center;
+        background-color: var(--main_color);
+        color: #fff;
+        font-weight: 700;
+        height: var(--header-height);
+      }
+
+      .header_logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .header_logo h3 {
+        padding-top: 10px;
+        margin-right: 20px;
+      }
+
+      .search_input input {
+        width: 30rem;
+        padding: 5px 10px;
+        border-radius: 3px;
+        border: none;
+      }
+
+      .auth a {
+        color: #fff;
+        text-decoration: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        margin-left: 10px;
+      }
+
+      .auth a:hover {
+        background-color: #555;
+      }
+
+      /* Sidebar */
+      .sidebar {
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        height: 100%;
+        width: 200px;
+        background-color: #f8f8f8;
+        padding-top: 2rem;
+      }
+      .sidebar ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      .sidebar ul li {
+        padding: 10px 0;
+        text-align: center;
+      }
+      .sidebar ul li a {
+        color: #828282;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .sidebar ul li a:hover,
+      .sidebar ul li a:active {
+        color: var(--main_color);
+      }
+
+      /* Main */
+      #main {
+        background-color: #f8f8f8;
+        width: 100%;
+        height: calc(100vh - var(--header-height));
+        padding: 0.8rem 0;
+      }
+      #main .container {
+        width: calc(100% - var(--sidebar-width) * 2);
+        height: 100%;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        padding: 1rem 2rem;
+      }
+      #main .container label {
+        font-weight: bold;
+        margin-bottom: 0.2rem;
+      }
+
+      #main .container input,
+      #main .container select,
+      #main .container textarea {
+        padding: 0.5rem;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+        outline: none;
+      }
+
+      #main .container input {
+        width: 100%;
+      }
+
+      #main .container select {
+        width: 40%;
+        font-weight: bold;
+      }
+
+      #main .container select option {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <header id="header">
+      <div class="header_logo">
+        <h3>Fotobook</h3>
+        <div class="search_input">
+          <input type="text" placeholder="Search Photo / Album" />
+        </div>
+      </div>
+
+      <div class="auth">
+        <a href="login.php">Login</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <ul>
+          <li><a href="">Feeds</a></li>
+          <li><a href="">My Photos</a></li>
+          <li><a href="">My Albums</a></li>
+        </ul>
+      </div>
+
+      <!-- Main content -->
+      <div class="container">
+        <div class="" style="width: 100%">
+          <button
+            type="button"
+            class="btn btn-success float-end display-block mb-3"
+          >
+            Add new photo
+          </button>
+          <hr style="width: 100%; border: 2px solid #555" />
+        </div>
+
+        <div class="row" style="width: 100%">
+          <div class="col-6">
+            <label for="photo_title">Title</label><br />
+            <input
+              type="text"
+              name="photo_title"
+              placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+              style="width: 90%; margin-bottom: 1.5rem"
+            /><br />
+
+            <label for="sharing_mode">Sharing mode</label><br />
+            <select name="sharing_mode" id="">
+              <option value="">Public</option>
+              <option value="">Private</option>
+            </select>
+          </div>
+
+          <div class="col-6">
+            <label for="description">Description</label><br />
+            <textarea
+              name="description"
+              id=""
+              cols="65%"
+              rows="5"
+              placeholder="Aliquam dictum nec massa ac consequat. Etiam dignissim tincidunt tellus sed vestibulum. Sed vitae vestibulum purus. Curabitur malesuada libero in nibh pretium, sed malesuada nisi feugiat"
+            ></textarea>
+          </div>
+
+          <div class="d-flex flex-wrap" style="gap: 1.5rem">
+            <div
+              class="card bg-dark text-white border-0 p-0 mt-4 mb-5"
+              style="max-width: 200px; height: 200px"
+            >
+              <img
+                src="https://s3-alpha-sig.figma.com/img/5ab1/4214/5fd468f24c4621db4ce5a2043a07c7dc?Expires=1719792000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Hih3-vUWxePo-yG4r9-2Ppeg5mHKaYpfmHf1LwF-2tYJcnJRbnlp9TT-MaBNMBpAgsDpI1d~iYgxQpww3vmKse-dUWdsMusYNW6tKUauub4KhNu9wyJiWfNoBpXgVXmkp6VF1JkYwRZGtISjxcL~0kSafLqlaV5Jitre0yetuYTOnTqY3QYOpuTk0tn48xND9VJWaETcZ7DjkZVPKU4C3o95Bvi6kVj3mwF5CXkbhHcwFjxOaAkv4NOpInG-pWW8XRL1ce~lyRKWTkbXj~vKOOyqwAEo2a0yhSouv3ghUl6C5nHj6GfVkNvp9xu67-eEAlxbLSMKPVbLTWBSGaQymw__"
+                class="card-img"
+                style="width: 100%; height: 100%; object-fit: cover"
+                alt="Stony Beach"
+              />
+              <div class="card-img-overlay float-start">
+                <i
+                  class="fa-solid fa-xmark"
+                  style="
+                    float: right;
+                    font-size: 1.5rem;
+                    color: #4f4f4f;
+                    cursor: pointer;
+                    -webkit-text-stroke: 3px #4f4f4f;
+                  "
+                ></i>
+              </div>
+            </div>
+            <div
+              class="card bg-dark text-white border-0 p-0 mt-4 mb-5"
+              style="max-width: 200px; height: 200px"
+            >
+              <img
+                src="https://s3-alpha-sig.figma.com/img/5ab1/4214/5fd468f24c4621db4ce5a2043a07c7dc?Expires=1719792000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Hih3-vUWxePo-yG4r9-2Ppeg5mHKaYpfmHf1LwF-2tYJcnJRbnlp9TT-MaBNMBpAgsDpI1d~iYgxQpww3vmKse-dUWdsMusYNW6tKUauub4KhNu9wyJiWfNoBpXgVXmkp6VF1JkYwRZGtISjxcL~0kSafLqlaV5Jitre0yetuYTOnTqY3QYOpuTk0tn48xND9VJWaETcZ7DjkZVPKU4C3o95Bvi6kVj3mwF5CXkbhHcwFjxOaAkv4NOpInG-pWW8XRL1ce~lyRKWTkbXj~vKOOyqwAEo2a0yhSouv3ghUl6C5nHj6GfVkNvp9xu67-eEAlxbLSMKPVbLTWBSGaQymw__"
+                class="card-img"
+                style="width: 100%; height: 100%; object-fit: cover"
+                alt="Stony Beach"
+              />
+              <div class="card-img-overlay float-start">
+                <i
+                  class="fa-solid fa-xmark"
+                  style="
+                    float: right;
+                    font-size: 1.5rem;
+                    color: #4f4f4f;
+                    cursor: pointer;
+                    -webkit-text-stroke: 3px #4f4f4f;
+                  "
+                ></i>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <button class="btn btn-success" style="margin-right: 3rem">
+              Save
+            </button>
+            <button class="btn btn-danger">
+              <i class="fa-solid fa-trash-can"></i> Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
