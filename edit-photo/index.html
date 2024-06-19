@@ -120,7 +120,7 @@
         margin-bottom: 0.2rem;
       }
 
-      #main .container input,
+      #main .container input[type="text"],
       #main .container select,
       #main .container textarea {
         padding: 0.5rem;
@@ -129,7 +129,7 @@
         outline: none;
       }
 
-      #main .container input {
+      #main .container input[type="text"] {
         width: 100%;
       }
 
@@ -170,11 +170,13 @@
       <!-- Main content -->
       <div class="container">
         <div class="" style="width: 100%">
+          <h5 class="float-start fw-bold">Edit photo</h5>
           <button
             type="button"
-            class="btn btn-success float-end display-block mb-3"
+            class="btn float-end display-block mb-3"
+            style="background-color: var(--main_color); color: white"
           >
-            Add new photo
+            Back
           </button>
           <hr style="width: 100%; border: 2px solid #555" />
         </div>
@@ -254,6 +256,27 @@
                 ></i>
               </div>
             </div>
+
+            <label
+              class="card text-white border-1 p-0 mt-4 mb-5 d-flex justify-content-center align-items-center"
+              style="
+                width: 200px;
+                height: 200px;
+                background-color: #f2f2f2;
+                border-style: dashed;
+                cursor: pointer;
+              "
+              for="files"
+              ><i
+                class="fa-solid fa-plus"
+                style="
+                  font-size: 4rem;
+                  -webkit-text-stroke: 5px #bdbdbd;
+                  color: #bdbdbd;
+                "
+              ></i>
+            </label>
+            <input type="file" id="files" hidden />
           </div>
 
           <div>
